@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Establecemos las variables de los elementos que usaremos en metodos y funciones
     private RadioButton rojo, verde, azul;
     private TextView texto;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void colorSeleccionado(View view){
+        // Comprobamos que boton esta pulsado y se muestra al usuario el boton pulsado
         if (rojo.isChecked()){
             texto.setText("El color " + rojo.getText() + " ha sido elegido");
             texto.setTextColor(getResources().getColor(R.color.rojo));
