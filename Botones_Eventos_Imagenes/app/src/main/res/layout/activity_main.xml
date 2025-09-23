@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/rgb"
+        android:contentDescription="TODO">
+    </ImageView>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
+
+        <RadioButton
+            android:id="@+id/rojo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_marginStart="5dp"
+            android:text="Rojo"
+            android:textColor="@color/rojo">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/verde"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginStart="5dp"
+            android:text="Verde"
+            android:textColor="@color/verde">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/azul"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginStart="20dp"
+            android:text="Azul"
+            android:textColor="@color/azul">
+        </RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/click"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pulsame"
+        android:onClick="colorSeleccionado">
+    </Button>
+
+    <TextView
+        android:id="@+id/colorSeleccionado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center">
+    </TextView>
+
+</LinearLayout>
