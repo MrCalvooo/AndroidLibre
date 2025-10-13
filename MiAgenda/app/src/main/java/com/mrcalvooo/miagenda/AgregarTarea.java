@@ -3,6 +3,7 @@ package com.mrcalvooo.miagenda;
 import static android.widget.Toast.LENGTH_LONG;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AgregarTarea extends AppCompatActivity {
 
     private EditText editTextNombreTarea;
-    private Button btnEstablecerHora, btnGuardarTarea;
+    private Button btnEstablecerHora, btnGuardarTarea, btnVolver;
     private RadioGroup rgbPrioridades;
     private TextView txtVerHoraTarea;
     private int hora = 0, minuto = 0;
@@ -36,6 +37,7 @@ public class AgregarTarea extends AppCompatActivity {
         txtVerHoraTarea = findViewById(R.id.txtVerHoraTarea);
         btnGuardarTarea = findViewById(R.id.btnGuardarTarea);
         rgbPrioridades = findViewById(R.id.rgbPrioridades);
+        btnVolver = findViewById(R.id.btnVolver);
 
         txtVerHoraTarea.setText("00:00");
         btnEstablecerHora.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +81,14 @@ public class AgregarTarea extends AppCompatActivity {
 
                 MainActivity.listaTareas.add(new Tarea(nombreTarea, hora, minuto, prioridad));
                 System.out.println("Tarea agregada");
+            }
+        });
+
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AgregarTarea.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
