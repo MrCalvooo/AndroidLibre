@@ -24,11 +24,18 @@
         android:stretchColumns="1">
     </TableLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduzca el ID de la tarea a eliminar">
+    </TextView>
+
     <EditText
         android:id="@+id/etxtTarea"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content">
     </EditText>
+
     <Button
         android:id="@+id/btnEliminarTarea"
         android:layout_width="wrap_content"
