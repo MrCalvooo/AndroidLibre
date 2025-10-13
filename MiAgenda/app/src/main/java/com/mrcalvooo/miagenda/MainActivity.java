@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,7 +21,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnAgregarTarea;
+    private Button btnAgregarTarea, btnEliminarTarea;
+    private EditText etxtTareaEliminar;
     protected static ArrayList<Tarea> listaTareas = new ArrayList<>();
     private TableLayout tableTareas;
 
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         tableTareas = findViewById(R.id.tableTareas);
+        btnEliminarTarea = findViewById(R.id.btnEliminarTarea);
+        etxtTareaEliminar = findViewById(R.id.etxtTarea);
     }
 
     // Funcion a ejecutar al volver de la vista de AgregarTarea
