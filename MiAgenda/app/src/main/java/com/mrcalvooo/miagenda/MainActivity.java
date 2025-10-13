@@ -1,5 +1,7 @@
 package com.mrcalvooo.miagenda;
 
+import static android.widget.Toast.LENGTH_LONG;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String tareaEliminar = etxtTareaEliminar.getText().toString();
+                int idEliminar = Integer.parseInt(tareaEliminar);
+
+                if (listaTareas.get(idEliminar) == null) {
+                    Toast.makeText(MainActivity.this, "No existe una tarea con ese ID",
+                            LENGTH_LONG).show();
+                } else {
+                    listaTareas.remove(idEliminar);
+                }
             }
         });
     }
