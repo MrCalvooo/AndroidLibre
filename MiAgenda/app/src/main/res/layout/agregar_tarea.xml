@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/editTextNombreTarea"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+    </EditText>
+
+    <Button
+        android:id="@+id/btnEstablecerHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Establecer hora tarea">
+    </Button>
+
+    <TextView
+        android:id="@+id/txtVerHoraTarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/rgbPrioridades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbPrioridadAlta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridad Alta">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rbPrioridadMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridad Media">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rbPrioridadBaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridad Baja">
+        </RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnGuardarTarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar Tarea">
+    </Button>
+
+</LinearLayout>
