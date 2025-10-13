@@ -11,9 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnAgregarTarea;
+    protected static ArrayList<Tarea> listaTareas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

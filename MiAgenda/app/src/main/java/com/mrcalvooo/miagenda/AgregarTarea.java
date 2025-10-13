@@ -73,6 +73,12 @@ public class AgregarTarea extends AppCompatActivity {
 
                 // Encontrar la priroridad seleccionada
                 RadioButton rb = findViewById(id);
+
+                String nombreTarea = editTextNombreTarea.getText().toString();
+                String prioridad = rb.getText().toString();
+
+                MainActivity.listaTareas.add(new Tarea(nombreTarea, hora, minuto, prioridad));
+                System.out.println("Tarea agregada");
             }
         });
     }
