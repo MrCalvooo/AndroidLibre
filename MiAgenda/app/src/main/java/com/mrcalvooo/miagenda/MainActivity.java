@@ -1,5 +1,7 @@
 package com.mrcalvooo.miagenda;
 
+import static android.widget.Toast.LENGTH_LONG;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +51,21 @@ public class MainActivity extends AppCompatActivity {
         tableTareas = findViewById(R.id.tableTareas);
         btnEliminarTarea = findViewById(R.id.btnEliminarTarea);
         etxtTareaEliminar = findViewById(R.id.etxtTarea);
+
+        btnEliminarTarea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tareaEliminar = etxtTareaEliminar.getText().toString();
+                int idEliminar = Integer.parseInt(tareaEliminar);
+
+                if (listaTareas.get(idEliminar) == null) {
+                    Toast.makeText(MainActivity.this, "No existe una tarea con ese ID",
+                            LENGTH_LONG).show();
+                } else {
+                    listaTareas.remove(idEliminar);
+                }
+            }
+        });
     }
 
     // Funcion a ejecutar al volver de la vista de AgregarTarea
@@ -64,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
         // Definimos el encabezado de la tabla
         TableRow encabezado = new TableRow(this);
         TableRow.LayoutParams params = new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f);
+
+        TextView idTarea = new TextView(this);
+        idTarea.setText("ID");
+        idTarea.setPadding(16, 16, 16, 16);
+        idTarea.setLayoutParams(params);
+        encabezado.addView(idTarea);
 
         TextView tituloTarea = new TextView(this);
         tituloTarea.setText("Tarea");
@@ -84,9 +108,17 @@ public class MainActivity extends AppCompatActivity {
         encabezado.addView(prioridadTarea);
 
         tableTareas.addView(encabezado);
+        int contador = 1;
 
         for (Tarea tarea : listaTareas) {
             TableRow fila = new TableRow(this);
+
+            // ID
+            TextView tareaId = new TextView(this);
+            tareaId.setText(String.format("%d", contador));
+            tareaId.setPadding(16, 16, 16, 16);
+            tareaId.setLayoutParams(params);
+            fila.addView(tareaId);
 
             // Nombre
             TextView tareaNombre = new TextView(this);
@@ -126,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
             fila.addView(tareaPrioridad);
 
             tableTareas.addView(fila);
+
+            contador++;
         }
     }
 }
