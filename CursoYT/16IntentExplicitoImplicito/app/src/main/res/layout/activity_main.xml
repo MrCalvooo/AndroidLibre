@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnNavegador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abrir navegador">
+    </Button>
+
+    <Button
+        android:id="@+id/btnMaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abrir Maps">
+    </Button>
+
+    <Button
+        android:id="@+id/btnContactos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abrir contactos">
+    </Button>
+
+    <Button
+        android:id="@+id/btnCamara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abrir camara">
+    </Button>
+
+</LinearLayout>
